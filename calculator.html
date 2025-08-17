@@ -1,0 +1,53 @@
+<!-- 
+  File: calculator.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple calculator web page that adds two numbers using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    /* Basic page styling */
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f0f0f0; 
+    }
+    /* Calculator container styling */
+    .calc { 
+      background: #fff; 
+      padding: 20px; 
+      margin: 50px auto; 
+      width: 250px; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 8px #ccc; 
+    }
+    /* Input and button styling */
+    input, button { 
+      width: 100%; 
+      margin: 5px 0; 
+      padding: 8px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Calculator UI -->
+  <div class="calc">
+    <input id="num1" type="number" placeholder="First number">
+    <input id="num2" type="number" placeholder="Second number">
+    <button onclick="calculate()">Add</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    // Function to add two numbers and display the result
+    function calculate() {
+      const n1 = parseFloat(document.getElementById('num1').value);
+      const n2 = parseFloat(document.getElementById('num2').value);
+      document.getElementById('result').textContent = 'Result: ' + (n1 + n2);
+    }
+  </script>
+</body>
+</html>
