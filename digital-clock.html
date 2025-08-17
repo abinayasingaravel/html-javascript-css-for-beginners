@@ -1,0 +1,43 @@
+<!-- 
+  File: digital-clock.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple digital clock web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Clock</title>
+  <style>
+    /* Page and clock styling */
+    body { 
+      background: #222; 
+      color: #fff; 
+      text-align: center; 
+      font-size: 2em; 
+      margin-top: 100px; 
+      font-family: monospace; 
+    }
+    #clock { 
+      background: #333; 
+      display: inline-block; 
+      padding: 20px 40px; 
+      border-radius: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Digital Clock UI -->
+  <div id="clock"></div>
+  <script>
+    // Function to update the clock every second
+    function updateClock() {
+      document.getElementById('clock').textContent = new Date().toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
