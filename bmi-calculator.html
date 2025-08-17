@@ -1,0 +1,74 @@
+<!-- 
+  File: bmi-calculator.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple BMI calculator web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      text-align: center;
+      margin-top: 100px;
+    }
+    .bmi-container {
+      background: #fff;
+      padding: 20px;
+      width: 300px;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #ccc;
+    }
+    input, button {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- BMI Calculator UI -->
+  <div class="bmi-container">
+    <h2>BMI Calculator</h2>
+    <input id="weight" type="number" placeholder="Weight (kg)">
+    <input id="height" type="number" placeholder="Height (cm)">
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    // Function to calculate BMI and display the result
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const heightCm = parseFloat(document.getElementById('height').value);
+      if (weight > 0 && heightCm > 0) {
+        const heightM = heightCm / 100;
+        const bmi = weight / (heightM * heightM);
+        document.getElementById('result').textContent = "Your BMI is: " + bmi.toFixed(2);
+      } else {
+        document.getElementById('result').textContent = "Please enter valid weight and height.";
+      }
+    }
+  </script>
+</body>
+</html>

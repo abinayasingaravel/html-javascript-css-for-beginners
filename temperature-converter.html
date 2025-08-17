@@ -1,0 +1,53 @@
+<!-- 
+  File: temperature-converter.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple temperature converter web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <style>
+    /* Page and converter styling */
+    body { 
+      font-family: Arial; 
+      text-align: center; 
+      margin-top: 100px; 
+      background: #f4f4f4;
+    }
+    input { 
+      padding: 8px; 
+    }
+    select, button { 
+      padding: 8px; 
+    }
+    #result { 
+      margin-top: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Temperature Converter UI -->
+  <input id="temp" type="number" placeholder="Temperature">
+  <select id="unit">
+    <option value="C">Celsius to Fahrenheit</option>
+    <option value="F">Fahrenheit to Celsius</option>
+  </select>
+  <button onclick="convert()">Convert</button>
+  <div id="result"></div>
+  <script>
+    // Function to convert temperature and display the result
+    function convert() {
+      const t = parseFloat(document.getElementById('temp').value);
+      const u = document.getElementById('unit').value;
+      let res = '';
+      if (u === 'C') res = (t * 9/5 + 32) + ' °F';
+      else res = ((t - 32) * 5/9) + ' °C';
+      document.getElementById('result').textContent = res;
+    }
+  </script>
+</body>
+</html>

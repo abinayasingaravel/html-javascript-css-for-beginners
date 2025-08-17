@@ -1,0 +1,46 @@
+<!-- 
+  File: counter.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple counter web page using HTML, CSS, and JavaScript.
+-->
+
+<!-- Counter -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter</title>
+  <style>
+    /* Page and counter styling */
+    body { 
+      font-family: Arial; 
+      text-align: center; 
+      margin-top: 100px; 
+    }
+    #count { 
+      font-size: 2em; 
+      margin: 20px; 
+    }
+    button { 
+      padding: 10px 20px; 
+      margin: 5px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Counter UI -->
+  <div id="count">0</div>
+  <button onclick="change(-1)">-</button>
+  <button onclick="change(1)">+</button>
+  <script>
+    // Initialize count variable
+    let count = 0;
+    // Function to change the count and update the display
+    function change(val) {
+      count += val;
+      document.getElementById('count').textContent = count;
+    }
+  </script>
+</body>
+</html>

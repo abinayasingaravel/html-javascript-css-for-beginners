@@ -1,0 +1,45 @@
+<!-- 
+  File: palindrome-checker.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple palindrome checker web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palindrome Checker</title>
+  <style>
+    /* Page and input styling */
+    body { 
+      font-family: Arial; 
+      text-align: center; 
+      margin-top: 100px; 
+    }
+    input { 
+      padding: 8px; 
+    }
+    button { 
+      padding: 8px; 
+    }
+    #result { 
+      margin-top: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Palindrome Checker UI -->
+  <input id="word" type="text" placeholder="Enter word">
+  <button onclick="check()">Check</button>
+  <div id="result"></div>
+  <script>
+    // Function to check if the entered word is a palindrome
+    function check() {
+      const w = document.getElementById('word').value;
+      const rev = w.split('').reverse().join('');
+      document.getElementById('result').textContent = (w && w === rev) ? "Palindrome!" : "Not a palindrome.";
+    }
+  </script>
+</body>
+</html>

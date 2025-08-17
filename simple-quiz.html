@@ -1,0 +1,71 @@
+<!-- 
+  File: simple-quiz.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple quiz web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Quiz</title>
+  <style>
+    /* Page and quiz container styling */
+    body { 
+      font-family: Arial; 
+      background: #f9fbe7; 
+    }
+    #quiz { 
+      background: #fff; 
+      padding: 20px; 
+      width: 300px; 
+      margin: 40px auto; 
+      border-radius: 8px; 
+    }
+    button { 
+      margin-top: 10px; 
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background: #007BFF;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #result {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Simple Quiz UI -->
+  <div id="quiz">
+    <div id="question"></div>
+    <input id="answer" type="text" placeholder="Your answer">
+    <button onclick="check()">Submit</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    // Quiz question and answer
+    const q = { question: "What is the capital of France?", answer: "Paris" };
+    // Display the question
+    document.getElementById('question').textContent = q.question;
+    // Function to check the user's answer
+    function check() {
+      const a = document.getElementById('answer').value.trim();
+      document.getElementById('result').textContent = (a.toLowerCase() === q.answer.toLowerCase()) ? "Correct!" : "Try again.";
+    }
+  </script>
+</body>
+</html>
