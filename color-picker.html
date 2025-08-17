@@ -1,0 +1,57 @@
+<!-- 
+  File: color-picker.html
+  Author: Abinaya
+  Date: August 17, 2025
+  Purpose: A simple color picker web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Picker</title>
+  <style>
+    /* Page and color box styling */
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      margin-top: 100px; 
+      background: #f4f4f4;
+    }
+    h1 {
+        font-family: italic;
+        color: red;
+
+    }
+    #colorBox { 
+      width: 200px; 
+      height: 200px; 
+      margin: 20px auto; 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      background: #3498db;
+    }
+    input[type="color"] {
+      width: 60px;
+      height: 40px;
+      border: none;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Color Picker UI -->
+   <h1><b>color box</b></h1>
+  <input type="color" id="picker" value="#3498db">
+  <div id="colorBox"></div>
+  <script>
+    // Update the color box background when the color input changes
+    const picker = document.getElementById('picker');
+    const box = document.getElementById('colorBox');
+    picker.addEventListener('input', () => {
+      box.style.background = picker.value;
+    });
+    // Set initial color
+    box.style.background = picker.value;
+  </script>
