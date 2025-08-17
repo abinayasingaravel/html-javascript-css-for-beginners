@@ -1,0 +1,42 @@
+<!-- 
+  File: to-do-list.html
+  Author: Your Name
+  Date: August 17, 2025
+  Purpose: A simple to-do list web page using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <style>
+    /* Basic page and container styling */
+    body { font-family: Arial; background: #e0f7fa; }
+    #todo { background: #fff; padding: 20px; width: 300px; margin: 40px auto; border-radius: 8px; }
+    input, button { padding: 8px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <!-- To-Do List UI -->
+  <div id="todo">
+    <input id="task" type="text" placeholder="New task">
+    <button onclick="addTask()">Add</button>
+    <ul id="list"></ul>
+  </div>
+  <script>
+    // Function to add a new task to the list
+    function addTask() {
+      const task = document.getElementById('task').value;
+      if (task) {
+        const li = document.createElement('li');
+        li.textContent = task;
+        document.getElementById('list').appendChild(li);
+        document.getElementById('task').value = '';
+      }
+    }
+  </script>
+</body>
+</html>
